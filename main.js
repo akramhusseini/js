@@ -1,6 +1,6 @@
 addLibraries();
-function addLibraries() {
 
+function addLibraries() {
   const reactScript = document.createElement('script');
   reactScript.src = 'https://unpkg.com/react@17.0.2/umd/react.development.js';
   document.head.appendChild(reactScript);
@@ -17,6 +17,17 @@ function addLibraries() {
 }
 
 function testReact() {
-  const element = React.createElement('h1', {}, 'Hello, React!');
-  ReactDOM.render(element, document.getElementById('root'));
+  function Counter() {
+    const [count, setCount] = React.useState(0);
+    const increment = () => setCount(count + 1);
+    const decrement = () => setCount(count - 1);
+    return React.createElement('div', null,
+      React.createElement('h1', null, 'Counter'),
+      React.createElement('p', null, 'Count: ' + count),
+      React.createElement('button', {onClick: increment}, 'Increment'),
+      React.createElement('button', {onClick: decrement}, 'Decrement')
+    );
+  }
+  
+  ReactDOM.render(React.createElement(Counter), document.getElementById('root'));
 }
