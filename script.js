@@ -2,7 +2,7 @@
 var newDiv = document.createElement("div");
 
 // set the content of the div element
-newDiv.innerHTML = "This is a new div element created by JavaScript.";
+newDiv.innerHTML = "This is a new div element created by The Super JavaScript.";
 
 // add some CSS styles to the div element
 newDiv.style.backgroundColor = "lightblue";
